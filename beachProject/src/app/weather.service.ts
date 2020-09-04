@@ -24,6 +24,7 @@ export class WeatherService {
     const marineParameters = {
       key: "826ac9715aae4317b1204900200309",
       q: data.q,
+      format: data.format,
       tide: data.tide
     }
     const returnMarine = this.http.get('http://api.worldweatheronline.com/premium/v1/marine.ashx', {params: marineParameters});

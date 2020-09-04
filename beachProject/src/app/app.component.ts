@@ -17,6 +17,7 @@ export class AppComponent implements OnInit{
   MarineParams: object = {
     key: "826ac9715aae4317b1204900200309",
     q: "34.03,118.87",
+    format: "json",
     tide: "yes"
   }
 
@@ -26,8 +27,8 @@ export class AppComponent implements OnInit{
     this.weather.getWeather(this.WeatherParams).subscribe(data =>{
       console.log(data);
     });
-    this.weather.getMarineWeather(this.MarineParams).subscribe(data2 =>{
-      console.log(data2);
+    this.weather.getMarineWeather(this.MarineParams).subscribe(data =>{
+      console.log(data);
     });
   }
 }
