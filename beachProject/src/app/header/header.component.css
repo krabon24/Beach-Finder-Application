@@ -1,0 +1,22 @@
+p { 
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+}
+
+.material-icons.md-48 { 
+    font-size: 48px; 
+}
+
+.travel-notice { 
+    display: flex;
+    justify-content: center;
+    color: #262626;
+    cursor: pointer;
+}
+
+.top-nav { 
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+}
