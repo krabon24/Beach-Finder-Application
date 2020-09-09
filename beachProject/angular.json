@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "beachProject"
+    }
+  },
+  "defaultProject": "beachProject",
+  "cli": {
+    "analytics": false
+  }
 }

@@ -10,6 +10,8 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { TeamComponent } from './team/team.component';
 import { AboutComponent } from './about/about.component';
+import { GoogleMapsModule } from '@angular/google-maps';
+import { GoogleMapComponent } from './google-map/google-map.component';
 
 @NgModule({
   declarations: [
@@ -18,14 +20,15 @@ import { AboutComponent } from './about/about.component';
     HeaderComponent,
     FooterComponent,
     TeamComponent,
-    AboutComponent
+    AboutComponent,
+    GoogleMapComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
-
+    HttpClientModule,
+    GoogleMapsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
