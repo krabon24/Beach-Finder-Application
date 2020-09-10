@@ -23,8 +23,8 @@ export class AppComponent implements OnInit{
   }
 
   BeachParms: object = {
-    key: "AIzaSyAYq4JeQPdEVRFfZMmorFcv4ABi_oAm7e0",
-    query: "beaches in Detroit"
+    key: "AIzaSyDD7HwmzWqfAPVxNACmt4Of17BVsbL3gjE",
+    city: "Detroit"
   }
 
 
