@@ -10,12 +10,12 @@ export class BeachListService {
   constructor(private http: HttpClient) { }
 
   getBeaches(data: any):Observable <any>{
-    const beachParams = {
-      key: "AIzaSyAYq4JeQPdEVRFfZMmorFcv4ABi_oAm7e0",
-      query: data.query
-    }
+    // const beachParams = {
+    //   key: "AIzaSyD9NpL2p8Gn4sunZylBwxbNkDt7DbIiROs",
+    //   query: data.query
+    // }
 
-    const returnBeaches = this.http.get('https://maps.googleapis.com/maps/api/place/textsearch/json', {params: beachParams});
-    return returnBeaches;
+    // const returnBeaches = this.http.get('https://maps.googleapis.com/maps/api/place/textsearch/json', {params: beachParams});
+    return this.http.get('http://localhost:3000');
   }
 }
