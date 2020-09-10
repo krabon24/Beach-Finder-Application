@@ -15,7 +15,7 @@ export class BeachListService {
       query: data.query
     }
 
-    const returnBeaches = this.http.get('https://maps.googleapis.com/maps/api/place/textsearch', {params: beachParams});
+    const returnBeaches = this.http.get('https://maps.googleapis.com/maps/api/place/textsearch/json', {params: beachParams});
     return returnBeaches;
   }
 }

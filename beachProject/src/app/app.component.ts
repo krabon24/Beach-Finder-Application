@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { WeatherService } from './weather.service';
+import { BeachListService } from './beach-list.service';
 
 @Component({
   selector: 'app-root',
@@ -21,7 +22,14 @@ export class AppComponent implements OnInit{
     tide: "yes"
   }
 
-  constructor(private weather: WeatherService){}
+  BeachParms: object = {
+    key: "AIzaSyAYq4JeQPdEVRFfZMmorFcv4ABi_oAm7e0",
+    query: "beaches in Detroit"
+  }
+
+
+
+  constructor(private weather: WeatherService, private beach: BeachListService){}
 
   ngOnInit(){
     this.weather.getWeather(this.WeatherParams).subscribe(data =>{
@@ -30,5 +38,9 @@ export class AppComponent implements OnInit{
     this.weather.getMarineWeather(this.MarineParams).subscribe(data =>{
       console.log(data);
     });
+
+    this.beach.getBeaches(this.BeachParms).subscribe(data =>{
+      console.log(data);
+    })
   }
 }
