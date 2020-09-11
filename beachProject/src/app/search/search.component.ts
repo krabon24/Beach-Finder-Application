@@ -3,11 +3,11 @@ import { WeatherService } from '../weather.service';
 import { BeachListService } from '../beach-list.service';
 
 @Component({
-  selector: 'app-search-results',
-  templateUrl: './search-results.component.html',
-  styleUrls: ['./search-results.component.css']
+  selector: 'app-search',
+  templateUrl: './search.component.html',
+  styleUrls: ['./search.component.css']
 })
-export class SearchResultsComponent implements OnInit {
+export class SearchComponent implements OnInit {
 
   WeatherParams: object = {
     q: "Detroit",
