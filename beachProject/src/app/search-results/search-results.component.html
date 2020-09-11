@@ -1,1 +1,8 @@
 
+<div class="search-container">
+    <form class="search-form" #beachForm="ngForm" (submit)="searchFormSubmitted(beachForm.value)">
+        <span class="material-icons">search</span>
+        <input type="text" name="city" placeholder="Where To?" ngModel>
+        <button class="search" type="submit">Let's Go Places</button>
+    </form>
+</div>
