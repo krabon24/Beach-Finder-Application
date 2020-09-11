@@ -12,6 +12,7 @@ import { TeamComponent } from './team/team.component';
 import { AboutComponent } from './about/about.component';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { GoogleMapComponent } from './google-map/google-map.component';
+import { SearchResultsComponent } from './search-results/search-results.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { GoogleMapComponent } from './google-map/google-map.component';
     FooterComponent,
     TeamComponent,
     AboutComponent,
-    GoogleMapComponent
+    GoogleMapComponent,
+    SearchResultsComponent
   ],
   imports: [
     BrowserModule,
