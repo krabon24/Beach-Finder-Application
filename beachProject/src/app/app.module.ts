@@ -12,7 +12,9 @@ import { TeamComponent } from './team/team.component';
 import { AboutComponent } from './about/about.component';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { GoogleMapComponent } from './google-map/google-map.component';
-import { SearchComponent } from './search/search.component'
+import { SearchComponent } from './search/search.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { TravelNoticeComponent } from './travel-notice/travel-notice.component'
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { SearchComponent } from './search/search.component'
     TeamComponent,
     AboutComponent,
     GoogleMapComponent,
-    SearchComponent
+    SearchComponent,
+    PageNotFoundComponent,
+    TravelNoticeComponent
   ],
   imports: [
     BrowserModule,
