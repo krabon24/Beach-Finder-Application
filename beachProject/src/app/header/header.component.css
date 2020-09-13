@@ -1,7 +1,17 @@
-p { 
+* { 
+    color: black;
+}
+
+a { 
+    color: #444444;
     font-size: 14px;
     margin: 0;
     padding: 0;
+    cursor: pointer;
+}
+
+.lifes-a-beach { 
+    text-decoration: none;
 }
 
 .material-icons.md-48 { 
@@ -19,4 +29,60 @@ p {
     display: flex; 
     justify-content: space-between;
     align-items: center;
+    margin: 10px 15px;
+}
+
+
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidebar a {
+    padding: 8px 8px 8px 40px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #444444;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    color: #818181;
+}
+
+.sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #fff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+}
+
+#main {
+    transition: margin-left .5s;
+    padding: 16px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidebar {padding-top: 15px;}
+    .sidebar a {font-size: 18px;}
 }

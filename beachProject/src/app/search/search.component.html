@@ -1,9 +1,14 @@
 <app-header></app-header>
 <div class="search-container">
-    <form class="search-form" #beachForm="ngForm" (submit)="searchFormSubmitted(beachForm.value)">
-        <span class="material-icons">search</span>
-        <input type="text" name="city" placeholder="Where To?" ngModel>
-        <button class="search" type="submit">Let's Go Places</button>
-    </form>
+    <div class="search-pic">
+        <img src="https://i.ibb.co/vxvL3Ts/planyourtrip.png" alt="planyourtrip" class="responsive" border="0">
+        <!-- <img src="https://i.ibb.co/D4MSnrv/planyourtrip.jpg" alt="plan-your-trip" class="responsive" border="0"> -->
+    </div>
+    <div class="search">
+        <form class="search-form" #beachForm="ngForm" (submit)="searchFormSubmitted(beachForm.value)">
+            <input type="text" name="city" placeholder="City" ngModel>
+            <button class="search" type="submit">Search</button>
+        </form>
+    </div>
 </div>
 <app-footer></app-footer>

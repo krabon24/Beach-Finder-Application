@@ -1,0 +1,16 @@
+* { 
+    color: #ffffff;
+}
+
+footer { 
+    margin-top: 50px;
+}
+
+.footer-nav:hover { 
+    color: #444444;
+}
+
+.burlywood { 
+    background-color: #F8D48C;
+}
+
