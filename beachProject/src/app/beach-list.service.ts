@@ -7,6 +7,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class BeachListService {
+  beachName: any = [];
 
   constructor(private http: HttpClient) { }
 
@@ -16,6 +17,7 @@ export class BeachListService {
       city: data.city
     }
 
-    return this.http.get('https://beach-finder-backend.herokuapp.com/beaches', {params: beachParams});
+    const returnBeaches = this.http.get('https://beach-finder-backend.herokuapp.com/beaches', {params: beachParams});
+    return returnBeaches;
   }
 }

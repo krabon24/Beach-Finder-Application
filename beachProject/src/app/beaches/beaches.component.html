@@ -1,0 +1,9 @@
+<div>
+    <div *ngFor="let beach of getBeaches()">
+        <!-- <img [src]="beach.icon" class="recipe-image" alt=""> -->
+        <p>{{ beach.name }}</p>
+        <p>{{ beach.rating }}</p>
+        <p>{{ beach.formatted_address }}</p>
+        <p>{{ beach.geometry.location.lat }}, {{ beach.geometry.location.lng }}</p>
+    </div>
+</div>
