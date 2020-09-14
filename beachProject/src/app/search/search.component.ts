@@ -22,26 +22,20 @@ export class SearchComponent implements OnInit {
     tide: "yes"
   }
 
-  // BeachParms: object = {
-  //   key: "AIzaSyDD7HwmzWqfAPVxNACmt4Of17BVsbL3gjE",
-  //   city: FormData.city
-  // }
-
   constructor(private weather: WeatherService, private beaches: BeachListService) { }
 
   ngOnInit(): void {
   }
 
-  searchFormSubmitted(formData: any){
+  searchFormSubmitted(formData: any) {
     const BeachParms: any = {
       key: "AIzaSyDD7HwmzWqfAPVxNACmt4Of17BVsbL3gjE",
       city: formData.city
     }
-
-    this.beaches.getBeaches(BeachParms).subscribe((data: any) =>{
-      const beachFilter = data.hits.filter(beach => beach.results.formatted_address.includes(formData.city));
-      console.log(beachFilter);
+    this.beaches.getBeaches(BeachParms).subscribe((data: any) => {
+      this.beaches.beachName = data.results.filter(beach => beach.formatted_address.includes(formData.city));
     });
-  }
 
+
+  }
 }

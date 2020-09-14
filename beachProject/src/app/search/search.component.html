@@ -2,13 +2,14 @@
 <div class="search-container">
     <div class="search-pic">
         <img src="https://i.ibb.co/vxvL3Ts/planyourtrip.png" alt="planyourtrip" class="responsive" border="0">
-        <!-- <img src="https://i.ibb.co/D4MSnrv/planyourtrip.jpg" alt="plan-your-trip" class="responsive" border="0"> -->
     </div>
     <div class="search">
-        <form class="search-form" #beachForm="ngForm" (submit)="searchFormSubmitted(beachForm.value)">
+        <form class="search-form" #searchForm="ngForm" (submit)="searchFormSubmitted(searchForm.value)">
             <input type="text" name="city" placeholder="City" ngModel>
             <button class="search" type="submit">Search</button>
         </form>
     </div>
 </div>
+<!-- for kentrell: google api here???? -->
+<app-beaches></app-beaches>
 <app-footer></app-footer>

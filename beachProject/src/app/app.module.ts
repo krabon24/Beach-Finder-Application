@@ -14,7 +14,8 @@ import { GoogleMapsModule } from '@angular/google-maps';
 import { GoogleMapComponent } from './google-map/google-map.component';
 import { SearchComponent } from './search/search.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { TravelNoticeComponent } from './travel-notice/travel-notice.component'
+import { TravelNoticeComponent } from './travel-notice/travel-notice.component';
+import { BeachesComponent } from './beaches/beaches.component'
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { TravelNoticeComponent } from './travel-notice/travel-notice.component'
     GoogleMapComponent,
     SearchComponent,
     PageNotFoundComponent,
-    TravelNoticeComponent
+    TravelNoticeComponent,
+    BeachesComponent
   ],
   imports: [
     BrowserModule,
