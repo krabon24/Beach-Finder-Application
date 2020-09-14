@@ -33,6 +33,7 @@ export class SearchComponent implements OnInit {
       city: formData.city
     }
     this.beaches.getBeaches(BeachParms).subscribe((data: any) => {
+      console.log(data.results)
       this.beaches.beachName = data.results.filter(beach => beach.formatted_address.includes(formData.city));
     });
 
