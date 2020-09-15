@@ -1,0 +1,26 @@
+.Tanita {
+    display: flex;
+    justify-content: space-around;
+}
+
+.tanita-image{
+    border-radius:  20%;
+}
+
+.Kentrell{
+    display: flex;
+    justify-content: space-around;
+}
+
+.kentrell-image{
+    border-radius:  20%;
+} 
+
+.Will{
+    display: flex;
+    justify-content: space-around;
+}
+
+.will-image{
+    border-radius:  20%;
+}
