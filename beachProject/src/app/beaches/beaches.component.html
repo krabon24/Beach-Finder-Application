@@ -5,7 +5,7 @@
         <h3><strong>Rating:</strong></h3><p>{{ beach.rating }}</p>
         <h3><strong>Address:</strong></h3><p>{{ beach.formatted_address }}</p>
         <h3><strong>Coordinates:</strong></h3><p>{{ beach.geometry.location.lat }}, {{ beach.geometry.location.lng }}</p>
-        <div class="weather-info" *ngFor="let weather of getWeather(beach.geometry.location.lat, beach.geometry.location.lng)">
+        <div class="weather-info" *ngFor="let weather of getMarineWeather()">
             <h2><Strong>Weather Forecast</Strong></h2>
             <p>{{weather.weather.date}}</p>
             <p>{{weather.weather.astronomy.sunrise}}, {{weather.weather.astronomy.sunset}}, {{weather.weather.astronomy.moon_phase}}</p>

@@ -9,17 +9,6 @@ export class WeatherService {
   weatherInfo: any = [];
 
   constructor(private http: HttpClient) { }
-
-  getWeather(data:any): Observable <any>{
-    
-    const weatherParameters = {
-      q: data.q,
-      key: "fc1601812744410bbfb14416200309",
-      days: data.days
-    }
-    const returnWeather = this.http.get('http://api.weatherapi.com/v1/forecast.json', {params: weatherParameters});
-    return returnWeather;
-  }
   
   getMarineWeather(data:any): Observable <any> {
     const marineParameters = {

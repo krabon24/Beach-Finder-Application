@@ -9,11 +9,6 @@ import { BeachListService } from '../beach-list.service';
 })
 export class SearchComponent implements OnInit {
 
-  WeatherParams: object = {
-    q: "Detroit",
-    key: "fc1601812744410bbfb14416200309",
-    days: 3
-  }
 
   MarineParams: object = {
     key: "826ac9715aae4317b1204900200309",
@@ -35,6 +30,7 @@ export class SearchComponent implements OnInit {
     this.beaches.getBeaches(BeachParms).subscribe((data: any) => {
       console.log(data.results)
       this.beaches.beachName = data.results.filter(beach => beach.formatted_address.includes(formData.city));
+      console.log(this.beaches.beachName);
       
       // const coordinatesLat = data.results.geometry.location.lat;
       // const coordinatesLng = data.results.geometry.location.lng;

@@ -18,7 +18,7 @@ export class BeachesComponent implements OnInit {
     return this.beaches.beachName;
   }
 
-  getWeather(){
+  getMarineWeather(){
     return this.weather.weatherInfo;
   }
 
