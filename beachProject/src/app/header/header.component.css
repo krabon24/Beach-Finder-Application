@@ -10,6 +10,16 @@ a {
     cursor: pointer;
 }
 
+.navbar { 
+    margin: 0 10px;
+}
+
+.home-title { 
+    font-weight: 800;
+    font-size: 40px;
+    margin: 0;
+}
+
 .lifes-a-beach { 
     text-decoration: none;
 }
@@ -21,7 +31,8 @@ a {
 .travel-notice { 
     display: flex;
     justify-content: center;
-    color: #262626;
+    color: #444444;
+    padding: 5px 0;
     cursor: pointer;
 }
 
@@ -76,13 +87,57 @@ a {
     border: none;
 }
 
-#main {
-    transition: margin-left .5s;
-    padding: 16px;
-}
-
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
     .sidebar {padding-top: 15px;}
     .sidebar a {font-size: 18px;}
 }
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) { 
+
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+.travel-notice {
+    padding: 8px 0;
+}
+
+/* .title {
+    position: relative;
+    transform: rotate(-90deg);
+    top: 400px;
+    left: 240px;
+} */
+
+.home-title { 
+    font-size: 50px;
+    font-weight: 800;
+}
+
+.nav-link { 
+    font-size: 18px;
+    padding: 20px;
+}
+
+.nav-link:hover { 
+    /* transition: 0.3s; */
+    background-color: #444444;
+    color: #ffffff;
+    border-radius: 20px;
+}
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { 
+    /* .home-container { 
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    margin: auto;
+  } */
+} 
