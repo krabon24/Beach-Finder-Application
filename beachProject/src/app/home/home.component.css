@@ -22,6 +22,7 @@ p {
 }
 
 .round-img {
+  border: 2px solid #F8D48C;
   border-radius: 50%;
   width: 325px;
   height: 325px;
@@ -73,3 +74,54 @@ input {
 }
 
 /* #F2E5BD */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) { 
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+  .plan-your-trip { 
+    margin-bottom: 40px;
+  }
+
+  .round-img { 
+    width: 450px;
+    height: 450px;
+  }
+
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+
+  .home-container { 
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    margin: auto;
+  }
+
+  /* .plan-text {
+    position: relative;
+    top: 25px;
+    font-size: 60px;
+    font-weight: 800;
+  } */
+
+  .plan-your-trip { 
+    position: relative;
+    bottom: 15px;
+    /* left: 15px; */
+    margin: auto;
+  }
+
+  .round-img { 
+    width: 450px;
+    height: 450px;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { 
+} 

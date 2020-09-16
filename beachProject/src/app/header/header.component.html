@@ -1,20 +1,66 @@
 <div class="travel-notice">
-    <a [routerLink]="['/covid19-travel-notice']">
+    <a [routerLink]="['/covid19-travel-notice']" class="travel-notice">
         Travel Notice: Learn More About COVID-19
     </a>
 </div>
 
-<div class="top-nav">
+<nav class="navbar navbar-expand-lg navbar-light">
+    <a [routerLink]="['/home']" class="lifes-a-beach">
+        <p class="home-title">Life's a Beach</p>
+    </a>
+    <button class="navbar-toggler openbtn" onclick="openNav()" type="button" data-toggle="mySidebar" data-target="#sidebar" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mr-auto"></ul>
+      <span class="navbar-text">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle desk-links" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">About Us</a>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" [routerLink]="['/about-lifes-a-beach']">Our Services</a>
+                  <a class="dropdown-item" [routerLink]="['/meet-the-team']">Meet the Team</a>
+                </div>
+              </li>
+            <li class="nav-item">
+              <a class="nav-link desk-links" [routerLink]="['/search']">Plan Your Trip</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link desk-links" [routerLink]="['/covid19-travel-notice']">COVID-19 Travel Notice</a>
+            </li>
+          </ul>
+      </span>
+    </div>
+  </nav>
+
+<!-- <div class="top-nav">
     <div class="title">
         <a [routerLink]="['/home']" class="lifes-a-beach">
-            <h1>Life's a Beach</h1>
+            <p class="home-title">Life's a Beach</p>
         </a>
     </div>
-    <div class="links">
-        <button class="openbtn" onclick="openNav()"><span class="material-icons">menu</span></button>  
+    <div class="row links">
+        <button class="openbtn" onclick="openNav()"><span class="material-icons">menu</span></button>   -->
         <!-- ☰ -->
+        <!-- <div class="desk-links-container">
+            <ul class="nav justify-content-end">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle desk-links" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">About Us</a>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="#">Our Services</a>
+                      <a class="dropdown-item" href="#">Meet the Team</a>
+                    </div>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link desk-links" href="#">Plan Your Trip</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link desk-links" href="#">COVID-19 Travel Notice</a>
+                </li>
+              </ul>
+        </div>
     </div>
-</div>
+</div> -->
 
 <div id="mySidebar" class="sidebar">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>

@@ -1,4 +1,6 @@
 .beach-card{
-    border: black solid 3px;
-    margin: 10px;
+    border: #444444 solid 2px;
+    border-radius: 25px;
+    margin: 25px;
+    padding: 25px;
 }
