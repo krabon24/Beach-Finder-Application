@@ -8,6 +8,7 @@ import { WeatherService } from '../weather.service';
   styleUrls: ['./beaches.component.css']
 })
 export class BeachesComponent implements OnInit {
+  showDetail: boolean;
 
   constructor(private beaches: BeachListService, private weather: WeatherService) { }
 
