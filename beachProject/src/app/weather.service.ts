@@ -13,7 +13,7 @@ export class WeatherService {
   
   getMarineWeather(longlat): Observable <any> {
     const marineParameters = {
-      key: "826ac9715aae4317b1204900200309",
+      key: "b9323b00e1aa4cfd8cc235439201709",
       q: longlat,
       format: "json",
       tide: "yes"
