@@ -6,4 +6,11 @@
         <h3><strong>Address:</strong></h3><p>{{ beach.formatted_address }}</p>
         <h3><strong>Coordinates:</strong></h3><p>{{ beach.geometry.location.lat }}, {{ beach.geometry.location.lng }}</p>
     </div>
-</div>
+    <google-map>
+    <map-marker
+        *ngFor="let marker of getMarkers()" [position]="marker.position" [label]="marker.label" [title]="marker.title" [options]="marker.options"
+    >
+    </map-marker>
+</google-map>
+</div> 
+
