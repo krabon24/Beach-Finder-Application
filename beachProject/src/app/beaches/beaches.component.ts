@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BeachListService } from "../beach-list.service";
 import { WeatherService } from '../weather.service';
-import { MapInfoWindow, MapMarker, GoogleMap } from "@angular/google-maps";
 
 @Component({
   selector: 'app-beaches',
@@ -10,6 +9,7 @@ import { MapInfoWindow, MapMarker, GoogleMap } from "@angular/google-maps";
 })
 export class BeachesComponent implements OnInit {
   showDetail: boolean;
+  selectedBeach: any
 
   constructor(private beaches: BeachListService, private weather: WeatherService) { }
 
@@ -27,5 +27,10 @@ export class BeachesComponent implements OnInit {
   getMarkers() {
     return this.beaches.markers;
   }
+
+  // displayDetail(beach: any) { 
+  //   this.showDetail = true;
+  //   this.selectedBeach = beach.recipe;
+  // }
 
 }
