@@ -36,7 +36,7 @@ export class SearchComponent implements OnInit {
 
       this.beaches.beachName.forEach((beach) => {
         this.weather.getMarineWeather(`${beach.geometry.location.lat},${beach.geometry.location.lng}`).subscribe((res) => {
-          beach.weatherData = res;
+          beach.weatherInfo = res;
           console.log(this.beaches.beachName);
 
           let marker: any = {};
