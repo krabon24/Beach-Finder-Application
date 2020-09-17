@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { WeatherService } from './weather.service';
 import { BeachListService } from './beach-list.service';
+import { DEFAULT_MARKER_OPTIONS } from '@angular/google-maps/map-marker/map-marker';
+import { MapInfoWindow, MapMarker, GoogleMap } from '@angular/google-maps';
 
 @Component({
   selector: 'app-root',
@@ -21,7 +23,8 @@ export class AppComponent implements OnInit{
     city: "Detroit"
   }
 
-
+  
+  
 
   constructor(private weather: WeatherService, private beach: BeachListService){}
 

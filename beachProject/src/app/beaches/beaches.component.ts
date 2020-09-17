@@ -9,6 +9,7 @@ import { WeatherService } from '../weather.service';
 })
 export class BeachesComponent implements OnInit {
   showDetail: boolean;
+  selectedBeach: any
 
   constructor(private beaches: BeachListService, private weather: WeatherService) { }
 
@@ -22,5 +23,14 @@ export class BeachesComponent implements OnInit {
   getMarineWeather(){
     return this.weather.weatherInfo;
   }
+
+  getMarkers() {
+    return this.beaches.markers;
+  }
+
+  // displayDetail(beach: any) { 
+  //   this.showDetail = true;
+  //   this.selectedBeach = beach.recipe;
+  // }
 
 }
