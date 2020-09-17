@@ -16,9 +16,9 @@ export class SearchComponent implements OnInit {
     format: "json",
     tide: "yes"
   }
-  
+
   markers: any = [];
-  
+
 
   constructor(private weather: WeatherService, private beaches: BeachListService) { }
 
@@ -42,17 +42,17 @@ export class SearchComponent implements OnInit {
           console.log(this.beaches.beachName);
 
           let marker: any = {};
-        console.log(beach.geometry.location.lat);
-        marker.position = new google.maps.LatLng({
-          lat: beach.geometry.location.lat,
-          lng: beach.geometry.location.lng,
-        });
-        // console.log(marker)
-        this.markers.push(marker);
+          console.log(beach.geometry.location.lat);
+          marker.position = new google.maps.LatLng({
+            lat: beach.geometry.location.lat,
+            lng: beach.geometry.location.lng,
+          });
+          // console.log(marker)
+          this.markers.push(marker);
         });
       });
-this.beaches.markers = this.markers;
-console.log(this.markers);
+      this.beaches.markers = this.markers;
+      console.log(this.markers);
     });
   };
 
