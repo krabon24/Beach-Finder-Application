@@ -5,5 +5,13 @@
         <h3><strong>Rating:</strong></h3><p>{{ beach.rating }}</p>
         <h3><strong>Address:</strong></h3><p>{{ beach.formatted_address }}</p>
         <h3><strong>Coordinates:</strong></h3><p>{{ beach.geometry.location.lat }}, {{ beach.geometry.location.lng }}</p>
+        <p>Astronomy</p>
+        <p>{{ weather.data }}</p>
+        <p *ngFor></p>
+    </div>
+    <div class="beach-card" *ngFor="let weather of getMarineWeather()">
+        <p>Astronomy</p>
+        <p>{{weather.data}}</p>
+
     </div>
 </div>

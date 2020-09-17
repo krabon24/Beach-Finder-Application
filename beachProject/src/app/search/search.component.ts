@@ -28,12 +28,14 @@ export class SearchComponent implements OnInit {
       city: formData.city
     }
     this.beaches.getBeaches(BeachParms).subscribe((data: any) => {
+      console.log(data.results)
       this.beaches.beachName = data.results.filter(beach => beach.formatted_address.includes(formData.city));
+      // console.log(this.beaches.beachName);
 
       this.beaches.beachName.forEach((beach) => {
-        this.weather.getMarineWeather(`${beach.geometry.location.lat},${beach.geometry.location.lng}`).subscribe((res) => {
+        this.weather.getMarineWeather(`${beach.geometry.location.lat}, ${beach.geometry.location.lng}`).subscribe((res) => {
           beach.weatherData = res;
-          console.log(this.beaches.beachName);
+          console.log(this.weather.getMarineWeather);
         });
       });
     });

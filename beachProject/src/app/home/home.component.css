@@ -1,14 +1,19 @@
-h1 {
-  position: relative;
-  top: 100px;
-  font-size: 40px;
-  font-weight: 800;
-}
-
 p {
   text-align: center;
-  /* font-weight: 200; */
-  margin: 25px 0;
+  margin: 15px 10px;
+}
+
+p.content-header { 
+  font-size: 40px;
+  font-weight: 600;
+}
+
+.travel-notice { 
+  display: flex;
+  justify-content: center;
+  color: #444444;
+  padding: 5px 0;
+  cursor: pointer;
 }
 
 .main-content {
@@ -55,7 +60,7 @@ input {
 
 .home-search {
   font-family: "Quicksand", sans-serif;
-  font-weight: 700;
+  font-weight: 600;
   font-size: 16px;
   width: 100%;
   background-color: #F8D48C;
@@ -86,14 +91,29 @@ input {
   }
 
   .round-img { 
-    width: 450px;
-    height: 450px;
+    width: 400px;
+    height: 400px;
   }
 
+  .carousel{
+    margin-top: 50px;
+  }
+  .carousel-inner{
+    height: 100px;
+  }
+  .carousel-caption{
+    color: #fff;
+    top: 50%;
+  }
 }
+
+
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) { 
+  p.content-header { 
+    font-size: 45px;
+  }
 
   .home-container { 
     display: flex;
@@ -101,13 +121,6 @@ input {
     align-content: center;
     margin: auto;
   }
-
-  /* .plan-text {
-    position: relative;
-    top: 25px;
-    font-size: 60px;
-    font-weight: 800;
-  } */
 
   .plan-your-trip { 
     position: relative;
@@ -117,11 +130,12 @@ input {
   }
 
   .round-img { 
-    width: 450px;
-    height: 450px;
+    width: 400px;
+    height: 400px;
   }
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) { 
+
 } 
