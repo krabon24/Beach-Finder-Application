@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BeachListService } from "../beach-list.service";
 import { WeatherService } from '../weather.service';
+import { MapInfoWindow, MapMarker, GoogleMap } from "@angular/google-maps";
 
 @Component({
   selector: 'app-beaches',
@@ -21,6 +22,10 @@ export class BeachesComponent implements OnInit {
 
   getMarineWeather(){
     return this.weather.weatherInfo;
+  }
+
+  getMarkers() {
+    return this.beaches.markers;
   }
 
 }

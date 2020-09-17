@@ -9,4 +9,11 @@
         <h6><strong>Today's High:</strong></h6><p>{{beach.weatherInfo.data.weather[0].maxtempF}}</p>
         <h6><strong>Today's Low:</strong></h6><p>{{beach.weatherInfo.data.weather[0].mintempF}}</p>
     </div>
-</div>
+
+    <google-map>
+    <map-marker
+        *ngFor="let marker of getMarkers()" [position]="marker.position" [label]="marker.label" [title]="marker.title" [options]="marker.options"
+    >
+    </map-marker>
+</google-map>
+</div> 
