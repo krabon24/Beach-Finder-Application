@@ -1,8 +1,18 @@
 <div class="container">
-    <google-map>
-        <map-marker *ngFor="let marker of getMarkers()" [position]="marker.position" [label]="marker.label"
-            [title]="marker.title" [options]="marker.options">
+    <google-map [zoom]="zoom" [center]="getCenter()" width="100%" class="google">
+        <map-marker 
+        #markerItem 
+        *ngFor="let marker of getMarkers()"
+        (mapClick)="openInfo(markerItem, marker.info)" 
+        [position]="marker.position" 
+        [label]="marker.label"
+        [title]="marker.title" 
+        [options]="marker.options">
         </map-marker>
+        
+        <map-info-window>
+            <h3>{{infoContent.placeName}}</h3>
+        </map-info-window>
     </google-map>
     <div class="beach-card" *ngFor="let beach of getBeaches()">
         <!-- <img [src]="beach.icon" class="recipe-image" alt=""> -->
