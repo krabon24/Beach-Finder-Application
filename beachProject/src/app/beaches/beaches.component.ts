@@ -21,14 +21,12 @@ export class BeachesComponent implements OnInit {
     lng: -82.9780668,
   });
 
-  constructor(
-    private beaches: BeachListService,
-    private weather: WeatherService
-  ) {}
+  constructor(private beaches: BeachListService, private weather: WeatherService) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
 
-  getBeaches() {
+  getBeaches(){
     return this.beaches.beachName;
   }
 
@@ -38,6 +36,11 @@ export class BeachesComponent implements OnInit {
 
   getMarkers() {
     return this.beaches.markers;
+  }
+  
+ displayDetail(beach: any) { 
+    this.showDetail = true;
+    this.selectedBeach = beach;
   }
   openInfo(marker: MapMarker, info) {
     let infoWindow = new google.maps.InfoWindow({
@@ -54,8 +57,4 @@ export class BeachesComponent implements OnInit {
     });
     return centered;
   }
-  // displayDetail(beach: any) {
-  //   this.showDetail = true;
-  //   this.selectedBeach = beach.recipe;
-  // }
 }
