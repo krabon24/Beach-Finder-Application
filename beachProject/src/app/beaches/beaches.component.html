@@ -1,33 +1,40 @@
 <div class="container">
-    <google-map [zoom]="zoom" [center]="getCenter()" width="100%" class="google">
-        <map-marker 
-        #markerItem 
-        *ngFor="let marker of getMarkers()"
-        (mapClick)="openInfo(markerItem, marker.info)" 
-        [position]="marker.position" 
-        [label]="marker.label"
-        [title]="marker.title" 
-        [options]="marker.options">
-        </map-marker>
-        
-        <map-info-window>
-            <h3>{{infoContent.placeName}}</h3>
-        </map-info-window>
-    </google-map>
-    <div class="beach-card" *ngFor="let beach of getBeaches()">
-        <!-- <img [src]="beach.icon" class="recipe-image" alt=""> -->
-        <h3><strong>Name:</strong></h3>
-        <p>{{ beach.name }}</p>
-        <h3><strong>Rating:</strong></h3>
-        <p>{{ beach.rating }}</p>
-        <h3><strong>Address:</strong></h3>
-        <p>{{ beach.formatted_address }}</p>
-        <h3><strong>Coordinates:</strong></h3>
-        <p>{{ beach.geometry.location.lat }}, {{ beach.geometry.location.lng }}</p>
-        <h3><strong>Weather info:</strong></h3>
-        <h6><strong>Today's High:</strong></h6>
-        <p>{{beach.weatherInfo.data.weather[0].maxtempF}}</p>
-        <h6><strong>Today's Low:</strong></h6>
-        <p>{{beach.weatherInfo.data.weather[0].mintempF}}</p>
-    </div>
+  <google-map
+    [zoom]="zoom"
+    [center]="getCenter()"
+    [options]="options"
+    width="100%"
+    class="google"
+  >
+    <map-marker
+      #markerItem="mapMarker"
+      *ngFor="let marker of getMarkers()"
+      (mapClick)="openInfo(markerItem, marker.info)"
+      [position]="marker.position"
+      [label]="marker.label"
+      [title]="marker.title"
+      [options]="marker.options"
+    >
+    </map-marker>
+
+    <map-info-window> </map-info-window>
+  </google-map>
+  <div class="beach-card" *ngFor="let beach of getBeaches()">
+    <!-- <img [src]="beach.icon" class="recipe-image" alt=""> -->
+    <h3><strong>Name:</strong></h3>
+    <p>{{ beach.name }}</p>
+    <h3><strong>Rating:</strong></h3>
+    <p>{{ beach.rating }}</p>
+    <h3><strong>Address:</strong></h3>
+    <p>{{ beach.formatted_address }}</p>
+    <h3><strong>Coordinates:</strong></h3>
+    <p>
+      {{ beach?.geometry.location.lat }}, {{ beach?.geometry.location.lng }}
+    </p>
+    <h3><strong>Weather info:</strong></h3>
+    <h6><strong>Today's High:</strong></h6>
+    <p>{{ beach.weatherInfo?.data.weather[0].maxtempF }}</p>
+    <h6><strong>Today's Low:</strong></h6>
+    <p>{{ beach.weatherInfo?.data.weather[0].mintempF }}</p>
+  </div>
 </div>
