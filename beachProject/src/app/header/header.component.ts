@@ -19,10 +19,6 @@ export class HeaderComponent implements OnInit {
     this.navbarOpen = !this.navbarOpen;
   }
 
-  onSearch() { 
-    console.log();
-  }
-
   onToggleThought() { 
     this.thoughtForm = !this.thoughtForm; 
   }

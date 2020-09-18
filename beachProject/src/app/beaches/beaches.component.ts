@@ -28,9 +28,9 @@ export class BeachesComponent implements OnInit {
     return this.beaches.markers;
   }
 
-  // displayDetail(beach: any) { 
-  //   this.showDetail = true;
-  //   this.selectedBeach = beach.recipe;
-  // }
+  displayDetail(beach: any) { 
+    this.showDetail = true;
+    this.selectedBeach = beach;
+  }
 
 }
