@@ -1,13 +1,24 @@
 <div *ngIf="!showDetail">
-    <!-- <google-map [zoom]="zoom" [center]="getCenter()" width="100%" class="google">
-        <map-marker #markerItem *ngFor="let marker of getMarkers()" (mapClick)="openInfo(markerItem, marker.info)"
-            [position]="marker.position" [label]="marker.label" [title]="marker.title" [options]="marker.options">
-        </map-marker>
+  <google-map
+    [zoom]="zoom"
+    [center]="getCenter()"
+    [options]="options"
+    width="100%"
+    class="google"
+  >
+    <map-marker
+      #markerItem="mapMarker"
+      *ngFor="let marker of getMarkers()"
+      (mapClick)="openInfo(markerItem, marker.info)"
+      [position]="marker.position"
+      [label]="marker.label"
+      [title]="marker.title"
+      [options]="marker.options"
+    >
+    </map-marker>
 
-        <map-info-window>
-            <h3>{{infoContent.placeName}}</h3>
-        </map-info-window>
-    </google-map> -->
+    <map-info-window> </map-info-window>
+  </google-map>
     <div class="container">
         <div class="beach-preview" *ngFor="let beach of getBeaches()">
             <!-- <img [src]="beach.icon" class="recipe-image" alt=""> -->
@@ -30,9 +41,9 @@
         <h2><strong>{{selectedBeach.rating}}</strong></h2>
         <!--Possible image goes here-->
         <h2><strong>Current Weather conditions</strong></h2>
-        <p>Today's High: {{selectedBeach.weatherInfo.data.weather[0].maxtempF}} , Today's Low:
-            {{selectedBeach.weatherInfo.data.weather[0].mintempF}}</p>
-        <p>Sunrise: {{selectedBeach.weatherInfo.data.weather[0].astronomy[0].sunrise}}, Sunset: {{selectedBeach.weatherInfo.data.weather[0].astronomy[0].sunset}} MoonPhase: {{selectedBeach.weatherInfo.data.weather[0].astronomy[0].moon_phase}}</p>
+        <p>Today's High: {{selectedBeach.weatherInfo?.data.weather[0].maxtempF}} , Today's Low:
+            {{selectedBeach.weatherInfo?.data.weather[0].mintempF}}</p>
+        <p>Sunrise: {{selectedBeach.weatherInfo?.data.weather[0].astronomy[0].sunrise}}, Sunset: {{selectedBeach.weatherInfo?.data.weather[0].astronomy[0].sunset}} MoonPhase: {{selectedBeach.weatherInfo?.data.weather[0].astronomy[0].moon_phase}}</p>
 
     </div>
 </div>
