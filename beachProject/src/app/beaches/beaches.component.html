@@ -32,5 +32,7 @@
         <h2><strong>Current Weather conditions</strong></h2>
         <p>Today's High: {{selectedBeach.weatherInfo.data.weather[0].maxtempF}} , Today's Low:
             {{selectedBeach.weatherInfo.data.weather[0].mintempF}}</p>
+        <p>Sunrise: {{selectedBeach.weatherInfo.data.weather[0].astronomy[0].sunrise}}, Sunset: {{selectedBeach.weatherInfo.data.weather[0].astronomy[0].sunset}} MoonPhase: {{selectedBeach.weatherInfo.data.weather[0].astronomy[0].moon_phase}}</p>
+
     </div>
 </div>

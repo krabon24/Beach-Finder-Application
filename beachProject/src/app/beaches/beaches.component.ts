@@ -16,7 +16,8 @@ export class BeachesComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  getBeaches(){ 
+  getBeaches(){
+    console.log(this.beaches.beachName);
     return this.beaches.beachName;
   }
 
