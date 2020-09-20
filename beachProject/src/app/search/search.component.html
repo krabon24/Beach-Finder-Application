@@ -1,8 +1,10 @@
 <app-header></app-header>
-<div class="search-container">
-    <div class="search-pic">
-        <img src="https://i.ibb.co/vxvL3Ts/planyourtrip.png" alt="planyourtrip" class="responsive" border="0">
-    </div>
+<div class="parallax"></div>
+<div class="parallax"></div>
+<div class="plan">
+    Plan Your Trip
+</div>
+<div class="container search-container">
     <div class="search">
         <form class="search-form" #searchForm="ngForm" (submit)="searchFormSubmitted(searchForm.value)">
             <input type="text" name="city" placeholder="City" ngModel>

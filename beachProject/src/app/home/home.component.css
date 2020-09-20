@@ -4,7 +4,7 @@ p {
 }
 
 p.content-header { 
-  font-size: 40px;
+  font-size: 35px;
   font-weight: 600;
 }
 
@@ -78,6 +78,34 @@ input {
   opacity: 1;
 }
 
+.things-container { 
+  background-color: #BAC6B2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 50px;
+  padding-top: 70px;
+  margin: 50px 0;
+}
+
+.things-text{
+  width: 300px;
+  background-color: white;
+  padding: 10px;
+  text-align: center;
+
+}
+.things-content { 
+  padding: 0 50px;
+  word-wrap: break-word;
+}
+
+.mobile-container { 
+  padding-right: 150px;
+  flex-direction: column;
+}
+
 /* #F2E5BD */
 
 /* Small devices (landscape phones, 576px and up) */
@@ -95,15 +123,13 @@ input {
     height: 400px;
   }
 
-  .carousel{
-    margin-top: 50px;
+  .things-text{
+    width: 300px;
   }
-  .carousel-inner{
-    height: 100px;
-  }
-  .carousel-caption{
-    color: #fff;
-    top: 50%;
+  
+  .things-content { 
+    padding: 0 50px;
+    word-wrap: break-word;
   }
 }
 
@@ -132,7 +158,13 @@ input {
   .round-img { 
     width: 400px;
     height: 400px;
+    margin: 15px 0;
   }
+
+  .home-search { 
+    margin: 10px 0;
+  }
+
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
