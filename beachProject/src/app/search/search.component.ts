@@ -43,6 +43,8 @@ export class SearchComponent implements OnInit {
               address: beach.formatted_address,
               rating: beach.rating,
             };
+            marker.animation = google.maps.Animation.DROP;
+            marker.icon = "http://maps.google.com/mapfiles/ms/micons/blue-dot.png";
             markers.push(marker);
           });
       });

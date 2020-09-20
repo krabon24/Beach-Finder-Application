@@ -13,11 +13,17 @@
       [position]="marker.position"
       [label]="marker.label"
       [title]="marker.title"
-      [options]="marker.options"
+      [options]="{animation: marker.animation, icon: marker.icon }"
+      [animation]="setAnimation"
     >
     </map-marker>
 
-    <map-info-window> </map-info-window>
+    <map-info-window> 
+      <h3>{{infoContent?.placeName}}</h3>  
+      <h4>{{infoContent?.address}}</h4>
+      <h5>{{infoContent?.rating}}</h5>
+    </map-info-window>
+    
   </google-map>
     <div class="container">
         <div class="beach-preview" *ngFor="let beach of getBeaches()">
