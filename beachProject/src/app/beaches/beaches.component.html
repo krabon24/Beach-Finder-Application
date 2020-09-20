@@ -1,55 +1,102 @@
 <div *ngIf="!showDetail">
-  <google-map
-    [zoom]="zoom"
-    [center]="getCenter()"
-    [options]="options"
-    width="100%"
-    class="google"
-  >
-    <map-marker
-      #markerItem="mapMarker"
-      *ngFor="let marker of getMarkers()"
-      (mapClick)="openInfo(markerItem, marker.info)"
-      [position]="marker.position"
-      [label]="marker.label"
-      [title]="marker.title"
-      [options]="{animation: marker.animation, icon: marker.icon }"
-      [animation]="setAnimation"
-    >
+  <google-map [zoom]="zoom" [center]="getCenter()" [options]="options" width="100%" class="google">
+    <map-marker #markerItem="mapMarker" *ngFor="let marker of getMarkers()"
+      (mapClick)="openInfo(markerItem, marker.info)" [position]="marker.position" [label]="marker.label"
+      [title]="marker.title" [options]="{animation: marker.animation, icon: marker.icon }" [animation]="setAnimation">
     </map-marker>
 
-    <map-info-window> 
-      <h3>{{infoContent?.placeName}}</h3>  
+    <map-info-window>
+      <h3>{{infoContent?.placeName}}</h3>
       <h4>{{infoContent?.address}}</h4>
       <h5>{{infoContent?.rating}}</h5>
     </map-info-window>
-    
+
   </google-map>
-    <div class="container">
-        <div class="beach-preview" *ngFor="let beach of getBeaches()">
-            <!-- <img [src]="beach.icon" class="recipe-image" alt=""> -->
-            <h3><strong>Name:</strong></h3>
-            <p>{{ beach.name }}</p>
-            <h3><strong>Rating:</strong></h3>
-            <p>{{ beach.rating }}</p>
-            <h3><strong>Address:</strong></h3>
-            <p>{{ beach.formatted_address }}</p>
-            <button (click)="displayDetail(beach)">More Info!</button>
-        </div>
+  <div class="container">
+    <div class="beach-preview" *ngFor="let beach of getBeaches()">
+      <h3><strong>Name:</strong></h3>
+      <p>{{ beach.name }}</p>
+      <h3><strong>Rating:</strong></h3>
+      <p>{{ beach.rating }}</p>
+      <h3><strong>Address:</strong></h3>
+      <p>{{ beach.formatted_address }}</p>
+      <button (click)="displayDetail(beach)">More Info!</button>
     </div>
+  </div>
 </div>
 
 <div *ngIf="showDetail">
-    <button (click)="showDetail = false">X</button>
-    <div class="beach-card">
-        <h2><strong>{{selectedBeach.name}}</strong></h2>
-        <h2><strong>{{selectedBeach.formatted_address}}</strong></h2>
-        <h2><strong>{{selectedBeach.rating}}</strong></h2>
-        <!--Possible image goes here-->
-        <h2><strong>Current Weather conditions</strong></h2>
-        <p>Today's High: {{selectedBeach.weatherInfo?.data.weather[0].maxtempF}} , Today's Low:
-            {{selectedBeach.weatherInfo?.data.weather[0].mintempF}}</p>
-        <p>Sunrise: {{selectedBeach.weatherInfo?.data.weather[0].astronomy[0].sunrise}}, Sunset: {{selectedBeach.weatherInfo?.data.weather[0].astronomy[0].sunset}} MoonPhase: {{selectedBeach.weatherInfo?.data.weather[0].astronomy[0].moon_phase}}</p>
+  <button (click)="showDetail = false">X</button>
+  <div class="beach-card">
+    <h2><strong>{{selectedBeach.name}}</strong></h2>
+    <h2><strong>{{selectedBeach.formatted_address}}</strong></h2>
+    <h2><strong>{{selectedBeach.rating}}</strong></h2>
+    <!--Possible image goes here-->
+    <div >
+      <p>Tide</p>
+      <p>{{ selectedBeach.weatherInfo?.data.weather[0].tides[0].tide_data[0].tideTime}}</p>
+      <p>{{selectedBeach.weatherInfo?.data.weather[0].tides[0].tide_data[0].tide_type}}</p>
 
+      <p>{{ selectedBeach.weatherInfo?.data.weather[0].tides[0].tide_data[3].tideTime}}</p>
+      <p>{{selectedBeach.weatherInfo?.data.weather[0].tides[0].tide_data[3].tide_type}}</p>
     </div>
+    <div *ngFor="let hourly of selectedBeach.weatherInfo?.data.weather[0].hourly">
+      <p>Hourly </p>
+      <p>time: {{ hourly.time }}</p>
+      <p>{{ hourly.FeelsLikeF }}</p>
+      <p>Wind Speed</p>
+      <p>{{ hourly.windspeedMiles }}</p>
+      <p>Weather Description</p>
+      <p>{{ hourly.weatherDesc[0].value }}</p>
+      <p>Weather Icon</p>
+      <img [src]="hourly.weatherIconUrl[0].value">
+    </div>
+    <h2><strong>Current Weather conditions</strong></h2>
+    <p>Daily Forecast</p>
+    <p>Today's High: {{selectedBeach.weatherInfo?.data.weather[0].maxtempF}} ,
+      Today's Low: {{selectedBeach.weatherInfo?.data.weather[0].mintempF}}</p>
+      <img [src]="selectedBeach.weatherInfo?.data.weather[0].hourly[4].weatherIconUrl[0].value">
+    <p>Sunrise: {{selectedBeach.weatherInfo?.data.weather[0].astronomy[0].sunrise}},
+      Sunset: {{selectedBeach.weatherInfo?.data.weather[0].astronomy[0].sunset}}
+      MoonPhase: {{selectedBeach.weatherInfo?.data.weather[0].astronomy[0].moon_phase}}</p>
+
+    <p>Tomorrows's High: {{selectedBeach.weatherInfo?.data.weather[1].maxtempF}} ,
+      Tomorrows's Low: {{selectedBeach.weatherInfo?.data.weather[1].mintempF}}</p>
+      <img [src]="selectedBeach.weatherInfo?.data.weather[1].hourly[4].weatherIconUrl[0].value">
+    <p>Sunrise: {{selectedBeach.weatherInfo?.data.weather[1].astronomy[0].sunrise}},
+      Sunset: {{selectedBeach.weatherInfo?.data.weather[1].astronomy[0].sunset}}
+      MoonPhase: {{selectedBeach.weatherInfo?.data.weather[1].astronomy[0].moon_phase}}</p>
+
+    <p>{{ selectedBeach.weatherInfo?.data.weather[2].date }} High:
+      {{selectedBeach.weatherInfo?.data.weather[2].maxtempF}} ,
+      {{ selectedBeach.weatherInfo?.data.weather[2].date }} Low: {{selectedBeach.weatherInfo?.data.weather[2].mintempF}}
+    </p>
+    <img [src]="selectedBeach.weatherInfo?.data.weather[2].hourly[4].weatherIconUrl[0].value">
+
+    <p>Sunrise: {{selectedBeach.weatherInfo?.data.weather[2].astronomy[0].sunrise}},
+      Sunset: {{selectedBeach.weatherInfo?.data.weather[2].astronomy[0].sunset}}
+      MoonPhase: {{selectedBeach.weatherInfo?.data.weather[2].astronomy[0].moon_phase}}</p>
+
+    <p>{{ selectedBeach.weatherInfo?.data.weather[3].date }} High:
+      {{selectedBeach.weatherInfo?.data.weather[3].maxtempF}} ,
+      {{ selectedBeach.weatherInfo?.data.weather[3].date }} Low: {{selectedBeach.weatherInfo?.data.weather[3].mintempF}}
+    </p>
+    <img [src]="selectedBeach.weatherInfo?.data.weather[3].hourly[4].weatherIconUrl[0].value">
+
+    <p>Sunrise: {{selectedBeach.weatherInfo?.data.weather[3].astronomy[0].sunrise}},
+      Sunset: {{selectedBeach.weatherInfo?.data.weather[3].astronomy[0].sunset}}
+      MoonPhase: {{selectedBeach.weatherInfo?.data.weather[3].astronomy[0].moon_phase}}</p>
+
+    <p>{{ selectedBeach.weatherInfo?.data.weather[4].date }} High:
+      {{selectedBeach.weatherInfo?.data.weather[4].maxtempF}} ,
+      {{ selectedBeach.weatherInfo?.data.weather[4].date }} Low: {{selectedBeach.weatherInfo?.data.weather[4].mintempF}}
+    </p>
+    <img [src]="selectedBeach.weatherInfo?.data.weather[4].hourly[4].weatherIconUrl[0].value">
+
+    <p>Sunrise: {{selectedBeach.weatherInfo?.data.weather[4].astronomy[0].sunrise}},
+      Sunset: {{selectedBeach.weatherInfo?.data.weather[4].astronomy[0].sunset}}
+      MoonPhase: {{selectedBeach.weatherInfo?.data.weather[4].astronomy[0].moon_phase}}</p>
+
+
+  </div>
 </div>
