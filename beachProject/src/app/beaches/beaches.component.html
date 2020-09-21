@@ -32,7 +32,8 @@
           <h3 (click)="displayDetail(beach)" class="beach-name"> {{ beach.name }}</h3>
         </div>
         <div class="favorite">
-          <input id="heart" type="checkbox" /><label for="heart">❤</label>
+          <p (click)="addFavorites(beach)">Fav</p>
+          <!-- <input id="heart" type="checkbox"(click)="addFavorites(beach)" /><label for="heart">❤</label> -->
         </div>
       </div>
       <div class="beach-icon">
@@ -108,11 +109,11 @@
     <!--Possible image goes here-->
     <div>
       <p>Tide</p>
-      <p>{{ selectedBeach.weatherInfo?.data.weather[0].tides[0].tide_data[0].tideTime}}</p>
+      <!-- <p>{{ selectedBeach.weatherInfo?.data.weather[0].tides[0].tide_data[0].tideTime}}</p>
       <p>{{selectedBeach.weatherInfo?.data.weather[0].tides[0].tide_data[0].tide_type}}</p>
 
       <p>{{ selectedBeach.weatherInfo?.data.weather[0].tides[0].tide_data[3].tideTime}}</p>
-      <p>{{selectedBeach.weatherInfo?.data.weather[0].tides[0].tide_data[3].tide_type}}</p>
+      <p>{{selectedBeach.weatherInfo?.data.weather[0].tides[0].tide_data[3].tide_type}}</p> -->
     </div>
     <div *ngFor="let hourly of selectedBeach.weatherInfo?.data.weather[0].hourly">
       <p>Hourly </p>

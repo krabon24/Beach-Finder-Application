@@ -61,7 +61,7 @@ export class BeachesComponent implements OnInit {
   }
 
   addFavorites(beach: any) { 
-    console.log(beach);
     this.beaches.favoriteBeaches.push(beach);
+    console.log(this.beaches.favoriteBeaches);
   }
 }
