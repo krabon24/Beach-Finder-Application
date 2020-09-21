@@ -10,6 +10,7 @@ import { MapInfoWindow, MapMarker, GoogleMap } from '@angular/google-maps';
 export class BeachListService {
   beachName: any = [];
   markers: any = [];
+  favoriteBeaches: any = [];
 
   constructor(private http: HttpClient) {}
 

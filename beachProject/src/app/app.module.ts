@@ -16,7 +16,8 @@ import { SearchComponent } from './search/search.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { TravelNoticeComponent } from './travel-notice/travel-notice.component';
 import { BeachesComponent } from './beaches/beaches.component';
-import { MapMarkerComponent } from './map-marker/map-marker.component'
+import { MapMarkerComponent } from './map-marker/map-marker.component';
+import { FavoriteBeachComponent } from './favorite-beach/favorite-beach.component'
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { MapMarkerComponent } from './map-marker/map-marker.component'
     PageNotFoundComponent,
     TravelNoticeComponent,
     BeachesComponent,
-    MapMarkerComponent
+    MapMarkerComponent,
+    FavoriteBeachComponent
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,139 @@
-.beach-preview{
-    border: #444444 solid 2px;
+/* p {
+  margin: 0;
+  padding: 0;
+} */
+
+.beach-name {
+  cursor: pointer;
+}
+
+.beach-name:hover {
+  text-decoration: underline;
+}
+
+.beach-preview-container {
+  padding-bottom: 2500px;
+}
+
+.beach-preview {
+    display: flex;
+    flex-direction: column;
+  border: #444444 solid 2px;
+  border-radius: 25px;
+  margin: 15px;
+  padding: 15px;
+}
+
+.beach-header { 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.beach-icon {
+    display: flex;
+  }
+
+  button { 
+    border: none;
     border-radius: 25px;
-    margin: 25px;
-    padding: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
+    background-color: #F2E5BD;
+    color: #444;
+    cursor: pointer;
+  }
+
+[id="heart"] {
+  position: absolute;
+  left: -100vw;
+}
+
+[for="heart"] {
+  color: #db9e96;
+  cursor: pointer;
+  font-size: 2em;
+  align-self: center;
+  transition: color 0.2s ease-in-out;
+}
+
+[for="heart"]:hover {
+  color: #bb6056;
+}
+
+[for="heart"]::selection {
+  color: none;
+  background: transparent;
+}
+
+[for="heart"]::moz-selection {
+  color: none;
+  background: transparent;
+}
+
+[id="heart"]:checked + label {
+  color: #bb6056;
+  will-change: font-size;
+  animation: heart 1s cubic-bezier(0.17, 0.89, 0.32, 1.49);
+}
+
+@keyframes heart {
+  0%,
+  17.5% {
+    font-size: 0;
+  }
+}
+
+.parallax {
+  /* The image used */
+  background-image: url("https://images.unsplash.com/photo-1516370873344-fb7c61054fa9?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80");
+  opacity: 0.7;
+  /* Full height */
+  height: 130px;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.plan {
+  position: absolute;
+  left: 0;
+  top: 200px;
+  width: 100%;
+  text-align: center;
+  font-size: 60px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: #000;
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .search {
+    display: flex;
+    margin: 35px 0;
+  }
+
+  .sticky-search {
+    position: sticky;
+    position: -webkit-sticky;
+    width: 50%;
+    bottom: 50px;
+    align-self: flex-end;
+  }
+
+  .search-results {
+    width: 50%;
+    position: relative;
+    margin-right: 20px;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
 }

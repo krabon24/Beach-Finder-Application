@@ -21,13 +21,14 @@ export class BeachesComponent implements OnInit {
     lng: -82.9780668,
   });
 
+  favoriteBeach: any;
+
   constructor(private beaches: BeachListService, private weather: WeatherService) { }
 
   ngOnInit(): void {
   }
 
   getBeaches(){
-    console.log(this.beaches.beachName);
     return this.beaches.beachName;
   }
 
@@ -57,5 +58,10 @@ export class BeachesComponent implements OnInit {
       lng: this.beaches.beachName[0]?.geometry.location.lng,
     });
     return centered;
+  }
+
+  addFavorites(beach: any) { 
+    console.log(beach);
+    this.beaches.favoriteBeaches.push(beach);
   }
 }
