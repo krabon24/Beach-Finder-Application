@@ -13,12 +13,12 @@ export class FavoriteBeachComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  getFavoriteBeaches(favorites: any) { 
-    console.log(this.beaches.favoriteBeaches);
-    let uniqueBeaches = this.beaches.favoriteBeaches.filter((c, index) => {
-      return this.beaches.favoriteBeaches.indexOf(c) === index;
-  });
-    return uniqueBeaches;
-  }
+  // getFavoriteBeaches(favorites: any) { 
+  //   console.log(this.beaches.favoriteBeaches);
+  //   let uniqueBeaches = this.beaches.favoriteBeaches.filter((c, index) => {
+  //     return this.beaches.favoriteBeaches.indexOf(c) === index;
+  // });
+  //   return uniqueBeaches;
+  // }
 
 }
