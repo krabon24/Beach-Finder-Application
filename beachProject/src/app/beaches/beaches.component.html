@@ -9,8 +9,8 @@
 
 <div *ngIf="!showDetail" class="search">
   <div class="container sticky-search">
-    <app-search></app-search>
-    <google-map [zoom]="zoom" [center]="getCenter()" [options]="options" width="100%" class="google">
+    <app-search (search)="search()"></app-search>
+    <google-map [zoom]="zoom" [center]="center" [options]="options" width="100%" class="google">
       <map-marker #markerItem="mapMarker" *ngFor="let marker of getMarkers()"
         (mapClick)="openInfo(markerItem, marker.info)" [position]="marker.position" [label]="marker.label"
         [title]="marker.title" [options]="{animation: marker.animation, icon: marker.icon }" [animation]="setAnimation">
@@ -49,56 +49,6 @@
 
   </div>
 </div>
-
-<!-- <div *ngIf="!showDetail" class="container search-container">
-  <p>Top Results</p>
-  <div class="col beach-preview" *ngFor="let beach of getBeaches()">
-    <p (click)="displayDetail(beach)" cursor="pointer" hover="text-decoration: underline"> {{ beach.name }}</p>
-    <p>{{ beach.formatted_address }}</p>
-    <p>{{ beach.rating }}</p>
-    <button (click)="displayDetail(beach)">
-      <span class="material-icons">info </span>
-      More Info!</button>
-  </div>
-
-</div> -->
-
-<!-- 
-<div class="container">
-  <div class="google-map">
-    <app-search></app-search>
-    <google-map></google-map>
-  </div>
-  <div class="results-stuff">
-    Results
-  </div>
-</div> -->
-<!-- 
-<div class="container results-container" *ngIf="!showDetail">
-    <google-map [zoom]="zoom" [center]="getCenter()" [options]="options" width="100%" class="google">
-      <map-marker #markerItem="mapMarker" *ngFor="let marker of getMarkers()"
-        (mapClick)="openInfo(markerItem, marker.info)" [position]="marker.position" [label]="marker.label"
-        [title]="marker.title" [options]="{animation: marker.animation, icon: marker.icon }" [animation]="setAnimation">
-      </map-marker>
-  
-      <map-info-window>
-        <h3>{{infoContent?.placeName}}</h3>
-        <h4>{{infoContent?.address}}</h4>
-        <h5>{{infoContent?.rating}}</h5>
-      </map-info-window>
-  
-    </google-map>
-  <div class="container beach-preview-container">
-    <div class="col beach-preview" *ngFor="let beach of getBeaches()">
-      <p (click)="displayDetail(beach)" cursor="pointer" hover="text-decoration: underline"> {{ beach.name }}</p>
-      <p>{{ beach.formatted_address }}</p>
-      <p>{{ beach.rating }}</p>
-      <button (click)="displayDetail(beach)">
-        <span class="material-icons">info </span>
-        More Info!</button>
-    </div>
-  </div>
-</div> -->
 
 <div *ngIf="showDetail">
   <button (click)="showDetail = false">X</button>

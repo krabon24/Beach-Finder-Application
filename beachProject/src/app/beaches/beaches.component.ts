@@ -21,6 +21,7 @@ export class BeachesComponent implements OnInit {
     lng: -82.9780668,
   });
 
+
   favoriteBeach: any;
 
   constructor(private beaches: BeachListService, private weather: WeatherService) { }
@@ -53,15 +54,24 @@ export class BeachesComponent implements OnInit {
     this.infoContent = info;
   }
   getCenter() {
-    let centered = new google.maps.LatLng({
-      lat: this.beaches.beachName[0]?.geometry.location.lat,
-      lng: this.beaches.beachName[0]?.geometry.location.lng,
-    });
-    return centered;
+    if (!this.beaches.beachName[0]) { 
+      return new google.maps.LatLng({
+        lat: 0,
+        lng: 0,
+      });
+    }
   }
 
   addFavorites(beach: any) { 
     this.beaches.favoriteBeaches.push(beach);
     console.log(this.beaches.favoriteBeaches);
+  }
+
+  search() { 
+    let centered = new google.maps.LatLng({
+      lat: this.beaches.beachName[0]?.geometry.location.lat,
+      lng: this.beaches.beachName[0]?.geometry.location.lng,
+    });
+    this.center = centered;
   }
 }

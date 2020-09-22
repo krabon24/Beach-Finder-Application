@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { WeatherService } from '../weather.service';
 import { BeachListService } from '../beach-list.service';
 
@@ -8,6 +8,8 @@ import { BeachListService } from '../beach-list.service';
   styleUrls: ['./search.component.css'],
 })
 export class SearchComponent implements OnInit {
+  @Output() search = new EventEmitter()
+
   constructor(
     private weather: WeatherService,
     private beaches: BeachListService
@@ -25,6 +27,7 @@ export class SearchComponent implements OnInit {
         beach.formatted_address.includes(formData.city)
       );
       let markers: any = [];
+      this.search.emit();
       this.beaches.beachName.forEach((beach) => {
         this.weather
           .getMarineWeather(
