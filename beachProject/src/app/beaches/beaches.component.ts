@@ -30,6 +30,7 @@ export class BeachesComponent implements OnInit {
   }
 
   getBeaches(){
+    console.log(this.beaches.beachName);
     return this.beaches.beachName;
   }
 
