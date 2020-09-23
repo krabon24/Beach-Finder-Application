@@ -1,5 +1,28 @@
-<p>favorite-beach works!</p>
-<div *ngFor="let favorite of getFavoriteBeaches()">
-    <p>{{favorite.name }}</p>
+<app-header></app-header>
 
+<div class="discover-container" >
+    <div class="col discover-places">
+        <h3 class="discover-header">Your Favorite Beaches</h3>
+    </div>
+
+    <div class="discover">
+        <section class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="favorite-container" *ngFor="let favorite of getFavoriteBeaches()">
+                        <img src="https://media.istockphoto.com/photos/beautiful-dog-of-dachshund-black-and-tan-buried-in-the-sand-at-the-picture-id1170291847?b=1&k=6&m=1170291847&s=170667a&w=0&h=3kQgOB9-ms_G_kT6iiEjgXWhX3HbQVUkBooO_i92K4s=" class="card-img">
+                        <div class="card-panel">
+                            <p>{{favorite.name }}</p>
+
+    <span title="Remove from favorites list"
+    ><i class="fas fa-times" (click)="removeFavoriteBeaches(beaches)"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
 </div>
+
+
+<app-footer></app-footer>

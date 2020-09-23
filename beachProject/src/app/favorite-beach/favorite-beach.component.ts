@@ -18,4 +18,9 @@ export class FavoriteBeachComponent implements OnInit {
     return this.beaches.favoriteBeaches;
   }
 
+  removeFavoriteBeaches(beaches) {
+    const itemIndex = this.beaches.favoriteBeaches.indexOf(beaches);
+    this.beaches.favoriteBeaches.splice(itemIndex, 1);
+  }
+
 }
