@@ -227,11 +227,11 @@
       <p>Water Temp</p>
       <p>{{ selectedBeach.weatherInfo?.data.weather[0].hourly[0].waterTemp_F }}</p>
       <p>Tide</p>
-       <p>{{ selectedBeach.weatherInfo?.data.weather[0].tides[0].tide_data[0].tideTime}}</p> 
-       <p>{{selectedBeach.weatherInfo?.data.weather[0].tides[0].tide_data[0].tide_type}}</p> 
+      <p>{{ selectedBeach.weatherInfo?.data.weather[0].tides[0].tide_data[0].tideTime}}</p> 
+      <p>{{selectedBeach.weatherInfo?.data.weather[0].tides[0].tide_data[0].tide_type}}</p> 
 
       <p>{{ selectedBeach.weatherInfo?.data.weather[0].tides[0].tide_data[2].tideTime}}</p> 
-       <p>{{selectedBeach.weatherInfo?.data.weather[0].tides[0].tide_data[2].tide_type}}</p> 
+      <p>{{selectedBeach.weatherInfo?.data.weather[0].tides[0].tide_data[2].tide_type}}</p> 
     </div>
     <div *ngFor="let hourly of selectedBeach.weatherInfo?.data.weather[0].hourly">
       <p>Hourly </p>
