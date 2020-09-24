@@ -45,6 +45,7 @@ export class BeachesComponent implements OnInit {
  displayDetail(beach: any) { 
     this.showDetail = true;
     this.selectedBeach = beach;
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
   }
   openInfo(marker: MapMarker, info) {
     let infoWindow = new google.maps.InfoWindow({
@@ -65,7 +66,14 @@ export class BeachesComponent implements OnInit {
 
   addFavorites(beach: any) { 
     this.beaches.favoriteBeaches.push(beach);
-    console.log(this.beaches.favoriteBeaches);
+  //   let favBackground = document.getElementById('favorite-icon').style.color;
+  //   if (favBackground == "rgb(219, 158, 150)") {
+  //     document.getElementById('favorite-icon').style.color = "rgb(168, 63, 57)";
+  // } else {
+  //     document.getElementById('favorite-icon').style.color = "rgb(219, 158, 150)";
+  // };
+
+  //   console.log(this.beaches.favoriteBeaches);
   }
 
   search() { 

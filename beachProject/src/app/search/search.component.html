@@ -1,11 +1,15 @@
-<!-- <app-header></app-header> -->
-<div class="container search-container">
+<div class="search-container">
     <div class="search">
-        <form class="search-form" #searchForm="ngForm" (submit)="searchFormSubmitted(searchForm.value)">
+        <!-- <form class="search-form" #searchForm="ngForm" (submit)="searchFormSubmitted(searchForm.value)">
             <input type="text" name="city" placeholder="City" ngModel>
             <button class="search" type="submit">Search</button>
-        </form>
+        </form> -->
+
+        <form class="search-form" #searchForm="ngForm" (submit)="searchFormSubmitted(searchForm.value)">
+            <input type="text" name="city" id="search-bar" placeholder="Search City" ngModel>
+            <button type="submit" class="search-btn">
+                <span class="material-icons search-icon">search</span>
+            </button>
+          </form>
     </div>
 </div>
-<!-- <app-beaches></app-beaches> -->
-<!-- <app-footer></app-footer> -->
