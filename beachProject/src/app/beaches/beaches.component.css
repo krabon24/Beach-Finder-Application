@@ -52,11 +52,11 @@ p.text-link {
 .beach-name-result-parallax {
   position: absolute;
   left: 0;
-  top: 200px;
+  top: 150px;
   width: 100%;
   text-align: center;
-  font-size: 60px;
-  font-weight: 600;
+  font-size: 40px;
+  font-weight: 500;
   letter-spacing: 3px;
   color: #fff;
 }
@@ -66,7 +66,7 @@ p.text-link {
   background-image: url("https://images.unsplash.com/photo-1516370873344-fb7c61054fa9?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80");
   opacity: 0.7;
   /* Full height */
-  height: 120px;
+  height: 150px;
 
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
@@ -78,7 +78,7 @@ p.text-link {
 .plan {
   position: absolute;
   left: 0;
-  top: 200px;
+  top: 150px;
   width: 100%;
   text-align: center;
   font-size: 60px;
@@ -302,6 +302,12 @@ h3,
     visibility: visible;
   }
 
+  .results-basics-container {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+
   .card-img {
     width: 690px;
   }
@@ -318,13 +324,40 @@ h3,
     text-align: center;
   }
 
-  /* p.text-before-search { 
-    word-break: break-all;
-  } */
+  .parallax { 
+    height: 120px;
+  }
+
+  .parallax-result {
+    height: 150px;
+  }
+
+  .plan { 
+    top: 200px;
+  }
+
+  .beach-.beach-name-result-parallax {
+    top: 200px;
+    font-size: 60px;
+   }
 }
+
 
 /* LARGE DEVICES(desktops, 992px and up) */
 @media (min-width: 992px) {
+
+  .today-container {
+    flex-direction: row;
+  }
+
+  .today,
+  .table-container.tide {
+    width: 50%;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
   .search {
     display: flex;
     margin: 35px 0;
@@ -343,23 +376,4 @@ h3,
     position: relative;
     /* margin-right: 20px; */
   }
-
-  .today-container {
-    flex-direction: row;
-  }
-
-  .results-basics-container {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-  }
-
-  .today,
-  .table-container.tide {
-    width: 50%;
-  }
-}
-
-/* Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
 }
