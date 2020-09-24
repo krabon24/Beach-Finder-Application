@@ -30,27 +30,35 @@
 
   <!-- SMALL RESULTS CARD WITH MINIMAL DETAILS  -->
   <div *ngIf="!showDetail" class="container search-results">
-    <p>Top Results</p>
-    <div class="panel panel-primary" *ngFor="let beach of getBeaches()">
-      <div class="panel-heading">
-        <h3 class="row panel-title">{{ beach.name }}</h3>
-        <span class="material-icons favorite" (click)="addFavorites(beach)" id="favorite-icon">favorite</span>
-      </div>
-      <div class="panel-body">
-        <div class="more-body">
-          <div class="info-container">
-            <span class="material-icons location">location_on</span>
-            {{ beach.formatted_address }}
+    <div *ngIf="getBeaches().length > 0">
+      <h5>Top Results</h5>
+      <div class="panel panel-primary" *ngFor="let beach of getBeaches()">
+        <div class="panel-heading">
+          <h3 class="row panel-title">{{ beach.name }}</h3>
+          <span class="material-icons favorite" (click)="addFavorites(beach)" id="favorite-icon">favorite</span>
+        </div>
+        <div class="panel-body">
+          <div class="more-body">
+            <div class="info-container">
+              <span class="material-icons location">location_on</span>
+              {{ beach.formatted_address }}
+            </div>
+            <div class="info-container">
+              <span class="material-icons rating">stars</span>
+              Rating: {{beach.rating}}</div>
           </div>
-          <div class="info-container">
-            <span class="material-icons rating">stars</span>
-            Rating: {{beach.rating}}</div>
-        </div>
-        <div class="more-details" (click)="displayDetail(beach)">
-          Details
-        </div>
+          <div class="more-details" (click)="displayDetail(beach)">
+            Details
+          </div>
 
+        </div>
       </div>
+    </div>
+    <div *ngIf="getBeaches().length === 0" class="text-before-search">
+      <!-- <p>Let's Go Places</p> -->
+      <p>Let's go places</p>
+      <p> 🏝️</p>
+
     </div>
   </div>
 </div>
@@ -190,10 +198,10 @@
               <div class="carousel-item col-md-4 active" *ngFor="let weekly of selectedBeach.weatherInfo?.data.weather">
                 <div class="card">
                   <div class="card-body">
-                    <h5 class="card-title">{{ weekly.date }}</h5>
+                    <h5 class="card-title">{{ weekly.date.slice(5, 10).replace("-", "/") }}</h5>
                     <img [src]="weekly.hourly[4].weatherIconUrl[0].value" class="beach-weather-icon">
                     <p class="card-text">{{ weekly.hourly[4].weatherDesc[0].value}}</p>
-                    <p class="card-text"><b>{{ weekly.maxtempF }}° F</b>/ {{ weekly.mintempF }}° F</p>
+                    <p class="card-text"><b>{{ weekly.maxtempF }}° F</b> / {{ weekly.mintempF }}° F</p>
                   </div>
                 </div>
               </div>
@@ -213,85 +221,6 @@
       </div>
     </div>
   </div>
+</div>
 
-
-  <!-- ----- OG CARD -----  -->
-  <!-- <div *ngIf="showDetail">
-  <button (click)="showDetail = false">X</button>
-  <div class="beach-card">
-    <h2><strong>{{selectedBeach.name}}</strong></h2>
-    <h2><strong>{{selectedBeach.formatted_address}}</strong></h2>
-    <h2><strong>{{selectedBeach.rating}}</strong></h2> -->
-  <!--Possible image goes here-->
-  <!-- <div>
-      <p>Water Temp</p>
-      <p>{{ selectedBeach.weatherInfo?.data.weather[0].hourly[0].waterTemp_F }}</p>
-      <p>Tide</p>
-      <p>{{ selectedBeach.weatherInfo?.data.weather[0].tides[0].tide_data[0].tideTime}}</p> 
-      <p>{{selectedBeach.weatherInfo?.data.weather[0].tides[0].tide_data[0].tide_type}}</p> 
-
-      <p>{{ selectedBeach.weatherInfo?.data.weather[0].tides[0].tide_data[2].tideTime}}</p> 
-      <p>{{selectedBeach.weatherInfo?.data.weather[0].tides[0].tide_data[2].tide_type}}</p> 
-    </div>
-    <div *ngFor="let hourly of selectedBeach.weatherInfo?.data.weather[0].hourly">
-      <p>Hourly </p>
-      <p>time: {{ hourly.time }}</p>
-      <p>{{ hourly.FeelsLikeF }}</p>
-      <p>Wind Speed</p>
-      <p>{{ hourly.windspeedMiles }}</p>
-      <p>Weather Description</p>
-      <p>{{ hourly.weatherDesc[0].value }}</p>
-      <p>Weather Icon</p>
-      <img [src]="hourly.weatherIconUrl[0].value">
-    </div>
-    <h2><strong>Current Weather conditions</strong></h2>
-    <p>Daily Forecast</p>
-    <p>Today's High: {{selectedBeach.weatherInfo?.data.weather[0].maxtempF}} ,
-      Today's Low: {{selectedBeach.weatherInfo?.data.weather[0].mintempF}}</p>
-    <img [src]="selectedBeach.weatherInfo?.data.weather[0].hourly[4].weatherIconUrl[0].value">
-    <p>Sunrise: {{selectedBeach.weatherInfo?.data.weather[0].astronomy[0].sunrise}},
-      Sunset: {{selectedBeach.weatherInfo?.data.weather[0].astronomy[0].sunset}}
-      MoonPhase: {{selectedBeach.weatherInfo?.data.weather[0].astronomy[0].moon_phase}}</p>
-
-    <p>Tomorrows's High: {{selectedBeach.weatherInfo?.data.weather[1].maxtempF}} ,
-      Tomorrows's Low: {{selectedBeach.weatherInfo?.data.weather[1].mintempF}}</p>
-    <img [src]="selectedBeach.weatherInfo?.data.weather[1].hourly[4].weatherIconUrl[0].value">
-    <p>Sunrise: {{selectedBeach.weatherInfo?.data.weather[1].astronomy[0].sunrise}},
-      Sunset: {{selectedBeach.weatherInfo?.data.weather[1].astronomy[0].sunset}}
-      MoonPhase: {{selectedBeach.weatherInfo?.data.weather[1].astronomy[0].moon_phase}}</p>
-
-    <p>{{ selectedBeach.weatherInfo?.data.weather[2].date }} High:
-      {{selectedBeach.weatherInfo?.data.weather[2].maxtempF}} ,
-      {{ selectedBeach.weatherInfo?.data.weather[2].date }} Low: {{selectedBeach.weatherInfo?.data.weather[2].mintempF}}
-    </p>
-    <img [src]="selectedBeach.weatherInfo?.data.weather[2].hourly[4].weatherIconUrl[0].value">
-
-    <p>Sunrise: {{selectedBeach.weatherInfo?.data.weather[2].astronomy[0].sunrise}},
-      Sunset: {{selectedBeach.weatherInfo?.data.weather[2].astronomy[0].sunset}}
-      MoonPhase: {{selectedBeach.weatherInfo?.data.weather[2].astronomy[0].moon_phase}}</p>
-
-    <p>{{ selectedBeach.weatherInfo?.data.weather[3].date }} High:
-      {{selectedBeach.weatherInfo?.data.weather[3].maxtempF}} ,
-      {{ selectedBeach.weatherInfo?.data.weather[3].date }} Low: {{selectedBeach.weatherInfo?.data.weather[3].mintempF}}
-    </p>
-    <img [src]="selectedBeach.weatherInfo?.data.weather[3].hourly[4].weatherIconUrl[0].value">
-
-    <p>Sunrise: {{selectedBeach.weatherInfo?.data.weather[3].astronomy[0].sunrise}},
-      Sunset: {{selectedBeach.weatherInfo?.data.weather[3].astronomy[0].sunset}}
-      MoonPhase: {{selectedBeach.weatherInfo?.data.weather[3].astronomy[0].moon_phase}}</p>
-
-    <p>{{ selectedBeach.weatherInfo?.data.weather[4].date }} High:
-      {{selectedBeach.weatherInfo?.data.weather[4].maxtempF}} ,
-      {{ selectedBeach.weatherInfo?.data.weather[4].date }} Low: {{selectedBeach.weatherInfo?.data.weather[4].mintempF}}
-    </p>
-    <img [src]="selectedBeach.weatherInfo?.data.weather[4].hourly[4].weatherIconUrl[0].value">
-
-    <p>Sunrise: {{selectedBeach.weatherInfo?.data.weather[4].astronomy[0].sunrise}},
-      Sunset: {{selectedBeach.weatherInfo?.data.weather[4].astronomy[0].sunset}}
-      MoonPhase: {{selectedBeach.weatherInfo?.data.weather[4].astronomy[0].moon_phase}}</p>
-
-
-  </div>
-</div> -->
-
-  <app-footer></app-footer>
+<app-footer></app-footer>
