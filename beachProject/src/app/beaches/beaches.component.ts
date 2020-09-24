@@ -30,7 +30,6 @@ export class BeachesComponent implements OnInit {
   }
 
   getBeaches(){
-    console.log(this.beaches.beachName);
     return this.beaches.beachName;
   }
 
@@ -66,14 +65,6 @@ export class BeachesComponent implements OnInit {
 
   addFavorites(beach: any) { 
     this.beaches.favoriteBeaches.push(beach);
-  //   let favBackground = document.getElementById('favorite-icon').style.color;
-  //   if (favBackground == "rgb(219, 158, 150)") {
-  //     document.getElementById('favorite-icon').style.color = "rgb(168, 63, 57)";
-  // } else {
-  //     document.getElementById('favorite-icon').style.color = "rgb(219, 158, 150)";
-  // };
-
-  //   console.log(this.beaches.favoriteBeaches);
   }
 
   search() { 

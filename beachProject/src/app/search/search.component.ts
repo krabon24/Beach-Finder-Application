@@ -29,12 +29,6 @@ export class SearchComponent implements OnInit {
       let markers: any = [];
       this.search.emit();
       this.beaches.beachName.forEach((beach) => {
-        // this.beaches.beachName.weatherInfo.data.weather.forEach(item => { 
-        // let oldDate = item.split('-')
-        // let date = [oldDate[1], oldDate[2], oldDate[0]]
-        // let newDate = date.join('-')
-        // beach.formattedDate = newDate
-        // });
         this.weather
           .getMarineWeather(
             `${beach.geometry.location.lat},${beach.geometry.location.lng}`
