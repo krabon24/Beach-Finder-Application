@@ -1,4 +1,6 @@
 <app-header></app-header>
+<div *ngFor="let favorite of getFavoriteBeaches()">
+    <p>{{favorite.name }}</p>
 
 <div class="discover-container" >
     <div class="col discover-places">
@@ -23,6 +25,4 @@
         </section>
     </div>
 </div>
-
-
 <app-footer></app-footer>
