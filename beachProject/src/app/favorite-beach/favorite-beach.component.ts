@@ -8,6 +8,8 @@ import { BeachListService } from '../beach-list.service';
 })
 export class FavoriteBeachComponent implements OnInit {
   favorite: any;
+  showDetail: boolean;
+  selectedBeach: any;
 
   constructor(private beaches: BeachListService) { }
 
@@ -21,6 +23,12 @@ export class FavoriteBeachComponent implements OnInit {
   removeFavoriteBeaches(beaches) {
     const itemIndex = this.beaches.favoriteBeaches.indexOf(beaches);
     this.beaches.favoriteBeaches.splice(itemIndex, 1);
+  }
+
+  displayDetail(beach: any) { 
+    this.showDetail = true;
+    this.selectedBeach = beach;
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
   }
 
 }
